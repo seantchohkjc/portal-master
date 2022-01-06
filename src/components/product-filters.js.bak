@@ -1,0 +1,242 @@
+import React, { Component } from 'react';
+
+import iconSet from "../styles/portal_icons.json";
+import IcomoonReact from "icomoon-react"; 
+import { useScrollRestoration } from 'gatsby';
+
+class ProductFilters extends Component {
+
+    render() {
+        return (
+            <>
+                <div class="accordion product-filter" id="accordion-product-filters">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                Category
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body"> 
+                                <RadioButtonParent />
+
+                                <CheckboxGroup />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ProductFilter
+                        filterName="Brand" />
+                    <ProductFilter
+                        filterName="Color" />
+                    <ProductFilter
+                        filterName="Material" />
+                    <ProductFilter
+                        filterName="Size" />
+                    <ProductFilter
+                        filterName="Occasion" />
+                    <ProductFilter
+                        filterName="Price" />
+                    
+                </div>
+            </>
+        )
+    }
+}
+
+class ProductFilter extends Component {
+    render() {
+        return (
+            <div class="accordion-item">
+                <h2 
+                    class="accordion-header" 
+                    id={ "filter-header-" + this.props.filterName }
+                >
+                    <button 
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={ "#filter-panel-" + this.props.filterName }
+                        aria-expanded="false"
+                        aria-controls={ "filter-panel-" + this.props.filterName }
+                    >
+                        { this.props.filterName}
+                    </button>
+                </h2>
+                <div 
+                    id={ "filter-panel-" + this.props.filterName }
+                    class="accordion-collapse collapse" 
+                    aria-labelledby={ "filter-header-" + this.props.filterName }>
+                    <div class="accordion-body"> 
+                        FILTER
+                    </div>
+                </div>
+            </div>
+            
+        )
+    }
+}
+
+class CheckboxGroup extends React.Component {
+    render() {
+        return (
+            <div>
+                <label className="form-input checkbox">
+                    LEVADE&nbsp;&nbsp;•&nbsp;&nbsp;500
+                    <input type="checkbox" />
+                    <span className="checkmark" />
+                </label>
+                <label className="form-input checkbox">
+                    Hemres&nbsp;&nbsp;•&nbsp;&nbsp;500
+                    <input type="checkbox" />
+                    <span className="checkmark" />
+                </label>
+            </div>
+        )
+    }
+}
+
+class RadioButtonParent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="radio-parent">
+                <label class="form-input radiogroup">
+                    All&nbsp;&nbsp;•&nbsp;&nbsp;490
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <div className="radio-children">
+                    <label class="form-input radiogroup">
+                        Ladies&nbsp;&nbsp;•&nbsp;&nbsp;105
+                        <input type="radio" name="category" />
+                        <span class="radiomark" />
+                    </label>
+
+                    <div className="radio-grand-children">
+                        <label class="form-input radiogroup">
+                            Clothing&nbsp;&nbsp;•&nbsp;&nbsp;120
+                            <input type="radio" name="category" />
+                            <span class="radiomark" />
+                        </label>
+
+                        <div className="radio-great-grand-children">
+                            <label class="form-input radiogroup">
+                                Tops&nbsp;&nbsp;•&nbsp;&nbsp;20
+                                <input type="radio" name="category" />
+                                <span class="radiomark" />
+                            </label>
+                            <label class="form-input radiogroup">
+                                Jackets&nbsp;&nbsp;•&nbsp;&nbsp;40
+                                <input type="radio" name="category" />
+                                <span class="radiomark" />
+                            </label>
+                            <label class="form-input radiogroup">
+                                Others&nbsp;&nbsp;•&nbsp;&nbsp;20
+                                <input type="radio" name="category" />
+                                <span class="radiomark" />
+                            </label>
+                        </div>
+
+                        <label class="form-input radiogroup">
+                            Accessories&nbsp;&nbsp;•&nbsp;&nbsp;20
+                            <input type="radio" name="category" />
+                            <span class="radiomark" />
+                        </label>
+
+                        <label class="form-input radiogroup">
+                            Bags & Leather Goods&nbsp;&nbsp;•&nbsp;&nbsp;5
+                            <input type="radio" name="category" />
+                            <span class="radiomark" />
+                        </label>
+
+                    </div>
+                </div>
+
+                <label class="form-input radiogroup">
+                    Gentlemen&nbsp;&nbsp;•&nbsp;&nbsp;120
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Children&nbsp;&nbsp;•&nbsp;&nbsp;20
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Accessories&nbsp;&nbsp;•&nbsp;&nbsp;85
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Lifestyle Décor&nbsp;&nbsp;•&nbsp;&nbsp;15
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Memorabilia&nbsp;&nbsp;•&nbsp;&nbsp;40
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Travel & Sports&nbsp;&nbsp;•&nbsp;&nbsp;10
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+                <label class="form-input radiogroup">
+                    Gift Ideas&nbsp;&nbsp;•&nbsp;&nbsp;55
+                    <input type="radio" name="category" />
+                    <span class="radiomark" />
+                </label>
+
+            </div>
+
+        )
+    }
+}
+
+class RadioButtonChild extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>Child</div>
+        )
+    }
+}
+
+class RadioButtonGrandChild extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>Grand Child</div>
+        )
+    }
+}
+
+
+class PriceRangeSlider extends React.Component {
+    render() {
+        return (
+            <></>
+        )
+    }
+}
+
+export default ProductFilters

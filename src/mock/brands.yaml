@@ -1,0 +1,12 @@
+- filter: Category
+  name: ALL
+  product_count: 1,000
+    
+
+- filter: Brand
+  - name: HKJC
+    product_count: 10
+  - name: LEVADE
+    product_count: 20
+  - name: Vivienne Tam
+    product_count: 30

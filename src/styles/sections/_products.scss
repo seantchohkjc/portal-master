@@ -1,0 +1,462 @@
+
+.plp-header {
+    background-color: #FAFAF8;
+    padding: 2.5rem 0 2rem 0;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .quick-picks {
+        list-style: none;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin-right: 32px;
+
+            a {
+                text-decoration: none;
+                
+                img {
+                    border-radius: 50%;
+                    width: 88px;
+                    height: 88px;
+                }
+    
+                span {
+                    display: block;
+                    margin-top: 8px;
+                    font-size: 0.7rem;
+                }
+            }
+
+            
+        }
+    }
+}
+
+.plp-fix-header {
+    box-shadow: 0px 2px 6px rgba(2, 10, 22, 0.1);
+}
+
+
+.box_shadow{
+    box-shadow:0 0 3px 3px rgba(0,0,0,0);
+  }
+.box_shadow:hover{
+    box-shadow: $box-shadow-bottom-heavy;
+}
+
+
+.product {
+    
+    .product-card {
+        color: red;
+    }
+    .product-info {
+        color: red;
+    }
+    .product-thumbnails {
+        position: relative;
+        
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .product-price {
+
+        .regular {
+            color: $dark-grey;
+            font-size: 1rem;
+        }
+        .discount {
+            color: red;
+            font-size: 0.75rem;
+            text-decoration: line-through;
+        }
+
+    }
+    .product-colour {
+        color: red;
+    }
+    .product-tags {
+
+        .tag {
+            color: red;
+        }
+    }
+
+
+}
+
+.product-wrapper {
+    position: relative;
+}
+
+.product-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow:0 0 0 0 rgba(0,0,0,0);
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    transition: $transition;
+    
+    &:hover {
+        /* Desktop/Floating */
+        cursor: pointer;
+    }
+
+}
+
+.product-thumbnails {
+    position: relative;
+    max-width: 300px;
+    padding-bottom: 150%;
+    background-color: lightgrey;
+    align-content: center;
+    text-align: center;
+    border-radius: 8px;
+    
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .front-image {
+        z-index: 9998;
+        transition: opacity .5s linear;
+    }
+
+    &:hover {
+        .front-image {
+            opacity: 0;
+        }
+        .button {
+            opacity: 0.7;
+        }
+    }
+
+    .button {
+        z-index: 9999;
+        position: absolute;
+        bottom: 8%;
+        /* Centering */
+        transform: translateX(-50%);
+        left: 50%;
+        width: 80%;
+        transition: opacity .5s linear;
+        border-radius: 32px;
+        background-color: #1D314F;
+        opacity: 0;
+        display: block;
+        color: white;
+        padding: 8px 0;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        a {
+            display: block;
+            color: white;
+            padding: 8px 0;
+            text-transform: uppercase;
+            text-decoration: none;
+            
+        }
+
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+
+    .collection {
+        position: absolute;
+        color: white;
+        background: $primary-color;
+        z-index: 9999;
+        max-width: 300px;
+        width: 100%;
+        padding: 8px 16px;
+        bottom: -20px;
+        text-align: left;
+        text-transform: uppercase;
+    }
+}
+
+.product-info {
+    .brand {
+        text-transform: uppercase;
+    }
+    .product-name {
+        font-family: $serif-font;
+    }
+}
+
+.product-tags {
+    .tag {
+        display: inline-block;
+        margin-right: 0.5rem;
+        padding: 8px 16px;
+        border-radius: 24px;
+        background: #F0F0F0;
+        color: $primary-color;
+        font-size: 0.75rem;
+    }
+
+    .tag:last-child {
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+/* PRODUCT FILTER */
+
+.product-filter {
+    .accordion-item {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+
+
+
+        .accordion-header {
+            margin-block-start: 0;
+            margin-block-end: 0;
+    
+            .accordion-button {
+                padding: 1rem 0;
+                color: $dark-grey;
+            }
+
+            .accordion-button:not(.collapsed) {
+                font-weight: 900;
+                color: $dark-grey;
+                background-color: white;
+            }
+        }
+
+        .accordion-body {
+            padding: 1rem 0;
+
+            ul {
+                list-style: none;
+                margin-left: -30px;
+                padding-inline-start: 40px;
+
+                li {
+                    padding-bottom: 0.5rem;
+                }
+                li:last-child {
+                    padding-bottom: 0rem;
+                }
+            }
+        }
+    }
+
+    .form-input {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked ~ .radiomark {
+                background-color: white;
+                border: 2px solid $secondary-color;
+            }
+
+            /* Show the checkmark when checked */
+            &:checked ~ .radiomark:after {
+                display: block;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            &:checked ~ .checkmark {
+                background-color: white;
+                border: 2px solid $secondary-color;
+            }
+
+            /* Show the checkmark when checked */
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            &:checked ~ .colorradiomark {
+                background-color: white;
+                border: 2px solid $secondary-color;
+            }
+
+            /* Show the checkmark when checked */
+            &:checked ~ .colorradiomark:after {
+                display: block;
+            }
+
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            border-radius: 2px;
+            background-color: #eee;
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 4px;
+                top: 4px;
+                width: 12px;
+                height: 12px;
+                background-color: $secondary-color;
+                border-radius: 2px;
+                /*
+                border: 1px solid white;
+                border-width: 0 2px 2px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                */
+            }
+        }
+
+        /* On mouse-over, add a grey background color */
+        &:hover input ~ .checkmark {
+            border: 2px solid $secondary-color;
+        }
+
+        /* Create a custom radio */
+        .radiomark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background-color: #eee;
+            border-radius: 50%;
+
+            /* Create the indicator (the dot/circle - hidden when not checked) */
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                top: 3px;
+                left: 3px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: $secondary-color;
+            }
+        }
+
+        /* On mouse-over, add a grey background color */
+        &:hover input ~ .radiomark {
+            content: "";
+                background: $secondary-color;
+        }
+
+        .colorradiomark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            @each $name, $value in $colors {
+                &.#{$name} {
+                  background: $value;
+                }
+            }
+        }
+
+
+
+
+    }
+
+    .radio-parent {
+        
+        .radio-children {
+            margin-left: 30px;
+        }
+
+        .radio-grand-children {
+            margin-left: 30px;
+        }
+
+        .radio-great-grand-children {
+            margin-left: 30px;
+        }
+
+    }
+}
+
+.price-range-slider {
+	width:100%;
+  float:left;
+  padding:10px 20px;
+	.range-value {
+		margin:0;
+		input {
+			width:100%;
+			background:none;
+			color: #000;
+			font-size: 16px;
+			font-weight: initial;
+			box-shadow: none;
+			border: none;
+			margin: 20px 0 20px 0;
+		}
+	}
+	
+	.range-bar {
+		border: none;
+		background: #000;
+		height: 3px;	
+		width: 96%;
+		margin-left: 8px;
+		
+		.ui-slider-range {
+			background:#06b9c0;
+		}
+		
+		.ui-slider-handle {
+			border:none;
+			border-radius:25px;
+			background:#fff;
+			border:2px solid #06b9c0;
+			height:17px;
+			width:17px;
+			top: -0.52em;
+			cursor:pointer;
+		}
+		.ui-slider-handle + span {
+			background:#06b9c0;
+		}
+	}
+}

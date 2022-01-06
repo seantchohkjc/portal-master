@@ -1,0 +1,12 @@
+.css-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 2fr));
+    grid-gap: calc(2em + 2vh) calc(1.5em + 1vmin);
+    grid-auto-flow: row dense;
+    
+    .product {
+        display: block;
+        max-width: 100%;
+        background-color: red;
+    }
+}

@@ -1,0 +1,66 @@
+import React, { Component } from 'react';
+
+import ProductTag from './elements/product-card/tag';
+
+class ProductCard extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state={flip:false}
+    }
+
+    flip() {
+        this.setState({flip: !this.state.flip},()=>console.log(this.state.flip))
+    }
+
+    render() {
+        return (
+            <div class="card-wrapper">
+                <div className={this.state.flip? "product-card flipped" : "product-card"}>
+                    <div class="front">
+                        <div class="productThumbnail">
+                            <img src="https://media.lanecrawford.com/B/R/L/BRL896_in_xl.jpg" class="front-image" />
+                            <img src="https://media.lanecrawford.com/B/R/L/BRL896_ro_xl.jpg" class="back-image" />
+                        </div>
+                        <div class="card-body">
+                            <h5>Product Card</h5>
+                            <label for="card1" class="button" onClick={()=>this.flip()}>Quick Shop</label>
+                            MAsdad
+                            asdas
+                            dasd
+                            asd
+                        </div>
+                    </div>
+                    <div className="back">
+                        Quick Action
+                        <label for="card1" class="button" onClick={()=>this.flip()}>Close</label>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+class Front extends React.Component {
+    render() {
+        return (
+            <div class="front">
+                <h5>Product Card</h5>
+                <label for="card1" class="button" onClick={()=>this.flip()}>Quick Shop</label>
+            </div>
+        )
+    }
+}
+
+class Back extends React.Component {
+    render() {
+        return (
+            <div className="back">
+                <p>Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post.</p>
+                <p>Bloggity bloggity bloggity blog. This would be the full text of the abbreviated blog post.</p>
+            </div>
+        )
+    }
+}
+
+export default ProductCard;

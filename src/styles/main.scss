@@ -1,0 +1,17 @@
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+@import './sections/header';
+
+@import './sections/products';
+@import './sections/prototypes';
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+header, footer {
+    padding: 20px 0;
+    background-color: $primary-color;
+    color: white;
+}
